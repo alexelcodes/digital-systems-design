@@ -1,0 +1,36 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Vivado generated files
+.Xil/
+*.jou
+*.log
+*.str
+*.tmp
+*.cache
+*.runs/
+*.sim/
+*.hw/
+*.ip_user_files/
+*.gen/
+*.srcs/
+
+# Vivado project / output files
+*.xpr
+*.xsa
+*.wdb
+*.pb
+*.dmp
+
+# Bitstreams and exports
+*.bit
+*.bin
+*.ltx
+
+# Reports
+*.rpt
