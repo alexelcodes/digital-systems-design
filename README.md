@@ -9,3 +9,20 @@
 
 Personal repository containing laboratory works for the **Digital Systems Design** course.
 The labs focus on basic FPGA design flow and VHDL-based digital design: RTL, constraints, simulation (where applicable), synthesis/implementation, and running designs on real hardware.
+
+## Scope
+
+- Combinational and sequential VHDL design
+- Clock domain considerations
+- FSMs and hierarchical design
+- Testbenches and simulation
+- Timing analysis and real hardware verification
+
+## Hardware / Toolchain
+
+- **Board:** PYNQ-Z2 (Zynq-7000)
+- **Toolchain:** AMD/Xilinx Vivado (ML Edition)
+- **Language:** VHDL
+
+> Note: I worked on **macOS (Apple Silicon)**, so Vivado was run via Docker + Rosetta.  
+> Setup notes: [docs/vivado-macos-docker-setup.md](docs/vivado-macos-docker-setup.md)
