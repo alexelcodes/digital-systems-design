@@ -45,3 +45,4 @@ Some labs also include `figures/` (oscilloscope screenshots, schematics, etc.).
 ## Labs
 
 - **Lab 1 — LED bring-up** — [lab-1-led](lab-1-led)
+- **Lab 2 — Combinational logic** — [lab-2-combinatorial-logic](lab-2-combinatorial-logic)
