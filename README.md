@@ -47,3 +47,4 @@ Some labs also include `figures/` (oscilloscope screenshots, schematics, etc.).
 - **Lab 1 — LED bring-up** — [lab-1-led](lab-1-led)
 - **Lab 2 — Combinational logic** — [lab-2-combinatorial-logic](lab-2-combinatorial-logic)
 - **Lab 3 — Counters** — [lab-3-counters](lab-3-counters)
+- **Lab 4 — Button with repeat / FSM** — [lab-4-button-with-repeat](lab-4-button-with-repeat)
