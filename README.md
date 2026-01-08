@@ -26,3 +26,22 @@ The labs focus on basic FPGA design flow and VHDL-based digital design: RTL, con
 
 > Note: I worked on **macOS (Apple Silicon)**, so Vivado was run via Docker + Rosetta.  
 > Setup notes: [docs/vivado-macos-docker-setup.md](docs/vivado-macos-docker-setup.md)
+
+## Repository structure
+
+Each lab follows the same directory structure:
+
+```text
+lab-X-*/
+├── README.md        # lab report
+└── src/
+    ├── rtl/         # synthesizable VHDL
+    ├── tb/          # testbenches (if applicable)
+    └── xdc/         # constraints (.xdc)
+```
+
+Some labs also include `figures/` (oscilloscope screenshots, schematics, etc.).
+
+## Labs
+
+- **Lab 1 — LED bring-up** — [lab-1-led](lab-1-led)
