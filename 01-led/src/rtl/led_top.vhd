@@ -1,4 +1,4 @@
--- Lab 1: LED Controller
+-- LED Controller
 -- Board: PYNQ-Z2
 -- Combinational design:
 --   led(3:0) follows btn(3:0)
@@ -8,7 +8,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity led_thingy_top is
+entity led_top is
   Port (
     btn :       in  STD_LOGIC_VECTOR(3 downto 0);
     sw :        in  STD_LOGIC_VECTOR(1 downto 0);
@@ -20,9 +20,9 @@ entity led_thingy_top is
     led5_g :    out STD_LOGIC;
     led5_b :    out STD_LOGIC
   );
-end led_thingy_top;
+end led_top;
 
-architecture Behavioral of led_thingy_top is
+architecture Behavioral of led_top is
    
     -- group of RGB led signals
     signal RGB_Led_4: std_logic_vector(0 to 2);

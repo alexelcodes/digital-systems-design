@@ -1,4 +1,4 @@
-# Lab 1 — LED Controller (PYNQ-Z2)
+# LED Controller (PYNQ-Z2)
 
 ## Goal
 
