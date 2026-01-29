@@ -7,8 +7,8 @@
   <img src="https://img.shields.io/badge/Board-Zynq--7000-informational" />
 </p>
 
-Personal repository containing laboratory works for the **Digital Systems Design** course.
-The labs focus on basic FPGA design flow and VHDL-based digital design: RTL, constraints, simulation (where applicable), synthesis/implementation, and running designs on real hardware.
+Personal repository containing project works for the **Digital Systems Design** course.
+It focuses on the basic FPGA design flow and VHDL-based digital design: RTL, constraints, simulation (where applicable), synthesis/implementation, and validation on real hardware.
 
 ## Scope
 
@@ -24,28 +24,28 @@ The labs focus on basic FPGA design flow and VHDL-based digital design: RTL, con
 - **Toolchain:** AMD/Xilinx Vivado (ML Edition)
 - **Language:** VHDL
 
-> Note: I worked on **macOS (Apple Silicon)**, so Vivado was run via Docker + Rosetta.  
+> Note: Vivado was run on **macOS (Apple Silicon)** using a Docker-based setup with Rosetta for x86_64 compatibility.
 > Setup notes: [docs/vivado-macos-docker-setup.md](docs/vivado-macos-docker-setup.md)
 
 ## Repository structure
 
-Each lab follows the same directory structure:
+Each project follows the same directory structure:
 
 ```text
-lab-X-*/
-├── README.md        # lab report
+XX-*/
+├── README.md        # project description
 └── src/
     ├── rtl/         # synthesizable VHDL
     ├── tb/          # testbenches (if applicable)
     └── xdc/         # constraints (.xdc)
 ```
 
-Some labs also include `figures/` (oscilloscope screenshots, schematics, etc.).
+Some folders also include `figures/` (oscilloscope screenshots, schematics, etc.).
 
-## Labs
+## Contents
 
-- **Lab 1 — LED bring-up** — [lab-1-led](lab-1-led)
-- **Lab 2 — Combinational logic** — [lab-2-combinatorial-logic](lab-2-combinatorial-logic)
-- **Lab 3 — Counters** — [lab-3-counters](lab-3-counters)
-- **Lab 4 — Button with repeat / FSM** — [lab-4-button-with-repeat](lab-4-button-with-repeat)
-- **Lab 5 — PWM controller** — [lab-5-pwm-controller](lab-5-pwm-controller)
+- **[LED bring-up](01-led)**
+- **[Combinational logic](02-combinatorial-logic)**
+- **[Counters](03-counters)**
+- **[Button with repeat / FSM](04-button-with-repeat)**
+- **[PWM controller](05-pwm-controller)**
