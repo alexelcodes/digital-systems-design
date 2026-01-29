@@ -1,4 +1,4 @@
-# Lab 3 — Counters and Integer Arithmetic (PYNQ-Z2)
+# Counters and Integer Arithmetic (PYNQ-Z2)
 
 ## Goal
 
@@ -19,7 +19,7 @@ The design contains two synchronous counters mapped to 8-bit output buses:
 - `int_a` — free-running counter, mapped to `ja[7:0]` (LSBs)
 - `int_b` — range-limited counter, mapped to `jb[7:0]` (LSBs)
 
-During the lab, `int_b` was modified multiple times to compare:
+During the project, `int_b` was modified multiple times to compare:
 - **VHDL range limits** (simulation range checking)
 - **synthesized hardware width** (flip-flop count)
 - **explicit wrap logic** (reset to 0 at 25)

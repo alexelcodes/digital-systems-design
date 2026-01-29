@@ -1,4 +1,4 @@
--- Lab 3: Counters
+-- Counters
 -- Board: PYNQ-Z2
 --   int_a: free-running counter -> JA(7:0)
 --   int_b: wraps at 25 -> JB(7:0)
@@ -10,7 +10,7 @@ library IEEE;
 
   -- Top-level module and I/O ports
 
-entity lab3_counters_top is
+entity counters_top is
   port (
     sysclk : in  std_logic;                    -- 125 MHz clock
     btn    : in  std_logic_vector(0 downto 0); -- btn(0) = reset button
@@ -19,7 +19,7 @@ entity lab3_counters_top is
   );
 end entity;
 
-architecture rtl of lab3_counters_top is
+architecture rtl of counters_top is
   --------------------------------------------------------------------------
   -- Counters
   -- Start from 0 in simulation, but on real FPGA the reset button is needed
