@@ -1,4 +1,4 @@
-# Lab 5 – RGB Dimmer with PWM (PYNQ-Z2)
+# RGB Dimmer with PWM (PYNQ-Z2)
 
 ## Goal
 

@@ -1,4 +1,4 @@
--- Testbench for lab5_top (Lab 5 RGB Dimmer)
+-- Testbench for top (RGB Dimmer)
 -- Verifies end-to-end:
 --  * clk_divider -> button_pulser -> rgb_controller -> PWM -> LEDs
 --  * btn0 : reset
@@ -9,11 +9,11 @@
 library IEEE;
   use IEEE.STD_LOGIC_1164.all;
 
-entity tb_lab5_top is
+entity tb_top is
   -- No ports in a testbench
 end entity;
 
-architecture Behavioral of tb_lab5_top is
+architecture Behavioral of tb_top is
 
   --------------------------------------------------------------------
   -- Board clock and buttons (simulation signals)
@@ -104,9 +104,9 @@ begin
   end process;
 
   --------------------------------------------------------------------
-  -- DUT: lab5_top
+  -- DUT: top
   --------------------------------------------------------------------
-  dut: entity work.lab5_top
+  dut: entity work.top
     port map (
       sysclk => sysclk,
       btn    => btn,

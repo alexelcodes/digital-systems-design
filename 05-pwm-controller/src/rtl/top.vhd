@@ -1,11 +1,11 @@
--- Lab 5 Top-Level: RGB Dimmer
+-- Top-Level: RGB Dimmer
 -- Combines clk_divider, button_pulser, rgb_controller, and three PWM modules.
 -- Board: PYNQ-Z2
 
 library IEEE;
   use IEEE.STD_LOGIC_1164.all;
 
-entity lab5_top is
+entity top is
   port (
     sysclk : in  std_logic;                    -- 125 MHz system clock
     btn    : in  std_logic_vector(3 downto 0); -- btn0=Reset, btn1=Select, btn2=Up, btn3=Down
@@ -18,7 +18,7 @@ entity lab5_top is
   );
 end entity;
 
-architecture rtl of lab5_top is
+architecture rtl of top is
 
   --------------------------------------------------------------------
   -- Internal signals
