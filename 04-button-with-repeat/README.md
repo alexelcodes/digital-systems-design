@@ -1,4 +1,4 @@
-# Lab 4 – Button Pulser and RGB FSM (PYNQ-Z2)
+# Button Pulser and RGB FSM (PYNQ-Z2)
 
 ## Goal
 

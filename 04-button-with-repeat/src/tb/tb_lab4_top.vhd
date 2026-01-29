@@ -1,4 +1,4 @@
--- Testbench for lab4_top (end-to-end integration)
+-- Testbench for top (end-to-end integration)
 -- Verifies:
 --  * clk_divider -> button_pulser -> rgb_fsm chain
 --  * Board clock = 125 MHz
@@ -8,11 +8,11 @@
 library IEEE;
   use IEEE.STD_LOGIC_1164.all;
 
-entity tb_lab4_top is
+entity tb_top is
   -- No ports in a testbench
 end entity;
 
-architecture Behavioral of tb_lab4_top is
+architecture Behavioral of tb_top is
   --------------------------------------------------------------------
   -- Board clock and buttons (simulation signals)
   --------------------------------------------------------------------
@@ -61,9 +61,9 @@ begin
   end process;
 
   --------------------------------------------------------------------
-  -- DUT: lab4_top (connect testbench signals to top-level)
+  -- DUT: top (connect testbench signals to top-level)
   --------------------------------------------------------------------
-  dut: entity work.lab4_top
+  dut: entity work.top
     port map (
       sysclk => sysclk,
       btn    => btn,

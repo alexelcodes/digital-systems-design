@@ -8,7 +8,7 @@
 library IEEE;
   use IEEE.STD_LOGIC_1164.all;
 
-entity lab4_top is
+entity top is
   port (
     sysclk : in  std_logic;                    -- 125 MHz board clock
     btn    : in  std_logic_vector(1 downto 0); -- btn(0)=Reset, btn(1)=User
@@ -18,7 +18,7 @@ entity lab4_top is
   );
 end entity;
 
-architecture rtl of lab4_top is
+architecture rtl of top is
   signal n_Reset : std_logic := '0'; -- final internal reset (active-low)
   signal clk_1k  : std_logic := '0'; -- divided clock (~1 kHz)
   signal pulse_s : std_logic := '0'; -- internal connection (button_pulser → rgb_fsm)
