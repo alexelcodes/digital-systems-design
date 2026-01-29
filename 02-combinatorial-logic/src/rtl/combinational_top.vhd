@@ -1,4 +1,4 @@
--- Lab 2: Combinational Logic
+-- Combinational Logic
 -- Board: PYNQ-Z2
 --   2-to-4 decoder and basic logic gates
 --   Mode selected by switches
@@ -10,7 +10,7 @@ library IEEE; -- include standard IEEE library
 
   -- top-level entity and port I/O declaration
 
-entity lab2_combinational_top is
+entity combinational_top is
   port (
     btn    : in  std_logic_vector(1 downto 0); -- 2 push buttons
     sw     : in  std_logic_vector(1 downto 0); -- 2 switches
@@ -26,7 +26,7 @@ end entity;
 
 -- architecture declaration section (signals, constants, types, components etc.)
 
-architecture Behavioral of lab2_combinational_top is
+architecture Behavioral of combinational_top is
 
   -- RGB colour codes reference
   -- | Code | R | G | B | Color  |

@@ -1,4 +1,4 @@
-# Lab 2 — Combinatorial Logic
+# Combinatorial Logic
 
 ## Goal
 
@@ -14,7 +14,7 @@ using sequential logic or processes.
 
 ## Design Overview
 
-This lab extends the basic LED control from Lab 1 and introduces simple
+This project extends the basic LED control from 01-led and introduces simple
 combinational logic structures:
 
 - **2-to-4 decoder**  
@@ -30,7 +30,7 @@ combinational logic structures:
   An alternative logic block is implemented for LEDs 0–3 using basic logic
   operators (`and`, `or`, `nand`, etc.), and selected via a switch input.
 
-The design is purely combinational and reuses parts of the Lab 1 structure.
+The design is purely combinational and reuses parts of the 01-led structure.
 
 ## Implementation Notes
 
