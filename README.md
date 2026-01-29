@@ -24,7 +24,7 @@ It focuses on the basic FPGA design flow and VHDL-based digital design: RTL, con
 - **Toolchain:** AMD/Xilinx Vivado (ML Edition)
 - **Language:** VHDL
 
-> Note: Vivado was run on **macOS (Apple Silicon)** using a Docker-based setup with Rosetta for x86_64 compatibility.
+> Note: Vivado was run on **macOS (Apple Silicon)** using a Docker-based setup with Rosetta for x86_64 compatibility.  
 > Setup notes: [docs/vivado-macos-docker-setup.md](docs/vivado-macos-docker-setup.md)
 
 ## Repository structure
