@@ -33,28 +33,14 @@ When prompted, drag the installer binary directly into **Terminal** and press **
 
 ---
 
-## Custom fixes for 2024.2
+## Custom fixes for unsupported Vivado versions
 
-_(Apply these only if the repository doesn’t yet include native support for 2024.2.)_
+If the upstream repository **doesn’t yet support the Vivado version you want**, you can usually enable it with small manual tweaks:
 
-See **PR #68** for example changes:
-<https://github.com/ichi4096/vivado-on-silicon-mac/pull/68/files>
+- Add a new install config under `scripts/install_configs/<new_version>.txt` (most often by copying an existing config with a new name from a nearby version).
 
-1. **Install config**  
-   Create `scripts/install_configs/202420.txt`. This is just a copy of
-   `202410.txt` with a new name (no internal edits needed).
-
-2. **Web‑installer hash**  
-   In `scripts/hashes.sh` add:
-   ```bash
-   ["20c806793b3ea8d79273d5138fbd195f"]=202420
-   ```
-   > The MD5 must match the official hash shown on the AMD/Xilinx download page.
-
-### Notes
-
-- The **Custom fixes for 2024.2** section is only for Vivado **2024.2** (until upstream adds support).
-- Future versions may require adding a new install config and hash in the same way.
+- Add the installer checksum/version mapping in `scripts/hashes.sh` so the setup script can recognize that installer.
+  > The MD5 must match the official hash shown on the AMD/Xilinx download page.
 
 ---
 
@@ -68,55 +54,18 @@ Adjust these values in Docker Desktop if you encounter such issues.
 
 ### Fixing incomplete LXDE startup (no icons or wallpaper)
 
-If, after starting the Vivado Docker container, the VNC window shows no desktop background or icons, follow these steps.
+In rare cases, LXDE may start without the desktop manager, resulting in a black background and missing icons.
 
-1. Go to the project folder
+This is not a Dockerfile issue.
+The problem is usually related to how the LXDE session is started by TigerVNC.
 
-   ```bash
-   cd ~/Downloads/vivado-on-silicon-mac-main
-   ```
+If this happens, the fix should be applied in:
 
-2. Create a startup script for the desktop and panel
+`scripts/linux_start.sh`
 
-   ```bash
-   mkdir -p bin
-   cat > bin/start-pcmanfm.sh <<'EOF'
-   #!/bin/sh
-   LOG=/tmp/pcmanfm-start.log
-   {
-    echo "=== start $(date) ==="
-    export DISPLAY="${DISPLAY:-:1}"
+Typically the issue is caused by LXDE being started without a proper D-Bus session, which prevents pcmanfm and lxpanel from initializing correctly.
 
-    if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
-    eval "$(dbus-launch --sh-syntax)" 2>/dev/null && echo "dbus-launch ok"
-    fi
-
-    export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp/xdg-$USER}"
-    mkdir -p "$XDG_RUNTIME_DIR" && chmod 700 "$XDG_RUNTIME_DIR"
-
-    sleep 2
-    pcmanfm --desktop --profile LXDE & echo "pcmanfm started $!"
-    lxpanel  --profile LXDE & echo "lxpanel started $!"
-    echo "=== done ==="
-   } >> "$LOG" 2>&1
-   EOF
-   chmod +x bin/start-pcmanfm.sh
-   ```
-
-3. Create an LXDE autostart entry
-
-   ```bash
-   mkdir -p .config/lxsession/LXDE
-   cat > .config/lxsession/LXDE/autostart <<'EOF'
-   @/home/user/bin/start-pcmanfm.sh
-   EOF
-   ```
-
-4. Restart the container
-
-   ```bash
-   ./scripts/start_container.sh
-   ```
+If your desktop shows icons and a panel, no action is required.
 
 ---
 
